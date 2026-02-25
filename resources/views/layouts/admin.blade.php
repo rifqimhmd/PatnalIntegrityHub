@@ -48,7 +48,7 @@
 
         <!-- SIDEBAR -->
         <aside id="sidebar"
-            class="fixed md:static z-50 top-0 left-0 w-64 bg-white shadow-xl min-h-screen p-6 border-r 
+            class="fixed md:static z-50 top-0 left-0 w-64 bg-white shadow-xl min-h-screen p-6 border-r
                    transform -translate-x-full md:translate-x-0 transition-transform duration-300">
 
             <nav class="space-y-2 mt-10 md:mt-0">
@@ -56,6 +56,11 @@
                 <a href="/admin"
                     class="block px-4 py-3 rounded-lg bg-gray-900 text-white shadow">
                     Dashboard
+                </a>
+
+                <a href="/banner"
+                    class="block px-4 py-3 rounded-lg hover:bg-gray-100 transition">
+                        Manajemen Banner
                 </a>
 
                 <a href="/admin/users"
