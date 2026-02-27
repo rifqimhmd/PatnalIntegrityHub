@@ -8,7 +8,7 @@
         {{-- Button tambah --}}
         <div class="mb-5">
             <button @click="open=true"
-               class="inline-flex items-center gap-2 px-5 py-2.5 bg-green-500 hover:bg-green-600
+                class="inline-flex items-center gap-2 px-5 py-2.5 bg-green-500 hover:bg-green-600
                       text-white text-sm font-semibold rounded-xl shadow transition">
                 TAMBAH SOP
             </button>
@@ -27,47 +27,47 @@
 
                 <tbody class="divide-y">
                     @forelse ($datas as $data)
-                        <tr class="hover:bg-gray-50 transition">
-                            {{-- Judul --}}
-                            <td class="px-4 py-3">
-                                {{ $data->judul }}
-                            </td>
+                    <tr class="hover:bg-gray-50 transition">
+                        {{-- Judul --}}
+                        <td class="px-4 py-3">
+                            {{ $data->judul }}
+                        </td>
 
-                            {{-- File --}}
-                            <td class="px-4 py-3 text-center">
-                                <a href="{{ asset('storage/sop/'.$data->file) }}"
-                                   target="_blank"
-                                   class="text-blue-600 hover:underline">
-                                    📄 Lihat PDF
-                                </a>
-                            </td>
+                        {{-- File --}}
+                        <td class="px-4 py-3 text-center">
+                            <a href="{{ asset('storage/sop/'.$data->file) }}"
+                                target="_blank"
+                                class="text-blue-600 hover:underline">
+                                📄 Lihat PDF
+                            </a>
+                        </td>
 
-                            {{-- Aksi --}}
-                            <td class="px-4 py-3">
-                                <form onsubmit="return confirm('Apakah Anda yakin?');"
-                                      action="{{ route('sop.destroy', $data->id) }}"
-                                      method="POST"
-                                      class="flex justify-center">
+                        {{-- Aksi --}}
+                        <td class="px-4 py-3">
+                            <form onsubmit="return confirm('Apakah Anda yakin?');"
+                                action="{{ route('sop.destroy', $data->id) }}"
+                                method="POST"
+                                class="flex justify-center">
 
-                                    @csrf
-                                    @method('DELETE')
+                                @csrf
+                                @method('DELETE')
 
-                                    <button type="submit"
-                                            class="px-3 py-1.5 bg-red-500 hover:bg-red-600
+                                <button type="submit"
+                                    class="px-3 py-1.5 bg-red-500 hover:bg-red-600
                                                    text-white rounded-lg text-sm">
-                                        🗑
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
+                                    🗑
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
                     @empty
-                        <tr>
-                            <td colspan="3" class="p-5">
-                                <div class="bg-red-100 text-red-600 px-4 py-3 rounded-lg text-center">
-                                    Data SOP belum tersedia.
-                                </div>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td colspan="3" class="p-5">
+                            <div class="bg-red-100 text-red-600 px-4 py-3 rounded-lg text-center">
+                                Data SOP belum tersedia.
+                            </div>
+                        </td>
+                    </tr>
                     @endforelse
                 </tbody>
             </table>
@@ -81,12 +81,12 @@
 
     {{-- ================= MODAL CREATE ================= --}}
     <div x-show="open"
-         x-cloak
-         x-transition.opacity
-         class="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+        x-cloak
+        x-transition.opacity
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
 
         <div @click.outside="open=false"
-             class="bg-white w-full max-w-lg rounded-2xl shadow-xl p-6">
+            class="bg-white w-full max-w-lg rounded-2xl shadow-xl p-6">
 
             {{-- Header --}}
             <div class="flex justify-between items-center mb-5">
@@ -96,9 +96,9 @@
 
             {{-- Form --}}
             <form action="{{ route('sop.store') }}"
-                  method="POST"
-                  enctype="multipart/form-data"
-                  class="space-y-4">
+                method="POST"
+                enctype="multipart/form-data"
+                class="space-y-4">
 
                 @csrf
 
@@ -106,21 +106,21 @@
                 <div>
                     <label class="text-sm font-semibold text-gray-700">Judul SOP</label>
                     <input type="text"
-                           name="judul"
-                           required
-                           class="w-full mt-2 border rounded-xl px-3 py-2"
-                           placeholder="Contoh: SOP Pelaporan Gratifikasi">
+                        name="judul"
+                        required
+                        class="w-full mt-2 border rounded-xl px-3 py-2"
+                        placeholder="Contoh: SOP Pelaporan Gratifikasi">
                 </div>
 
                 {{-- File PDF --}}
                 <div>
                     <label class="text-sm font-semibold text-gray-700">File SOP (PDF)</label>
                     <input type="file"
-                           name="file"
-                           accept="application/pdf"
-                           required
-                           class="w-full mt-2 border rounded-xl px-3 py-2"
-                           @change="fileName = $event.target.files[0]?.name">
+                        name="file"
+                        accept="application/pdf"
+                        required
+                        class="w-full mt-2 border rounded-xl px-3 py-2"
+                        @change="fileName = $event.target.files[0]?.name">
                 </div>
 
                 {{-- Preview Nama File --}}

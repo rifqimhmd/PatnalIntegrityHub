@@ -91,7 +91,7 @@
 
                     <a href="#"
                         class="block px-4 py-3 text-sm hover:bg-gray-50 transition">
-                        Profil
+                        Profil Saya
                     </a>
 
                     <form method="POST" action="{{ route('logout') }}">
@@ -99,7 +99,7 @@
                         <button
                             class="w-full text-left px-4 py-3 text-sm 
                        hover:bg-red-50 hover:text-red-600 transition">
-                            Logout
+                            Keluar
                         </button>
                     </form>
 
@@ -110,7 +110,7 @@
             <button
                 @click="$dispatch('open-auth')"
                 class="bg-blue-600 text-white px-5 py-2 rounded-xl">
-                Masuk
+                Masuk / Daftar
             </button>
             @endguest
         </nav>
@@ -180,7 +180,7 @@
 
                 <a href="#"
                     class="block px-8 py-3 text-sm hover:bg-gray-100">
-                    Profil
+                    Profil Saya
                 </a>
 
                 <form method="POST" action="{{ route('logout') }}">
@@ -188,7 +188,7 @@
                     <button
                         class="w-full text-left px-8 py-3 text-sm 
                        hover:bg-red-50 hover:text-red-600">
-                        Logout
+                        Keluar
                     </button>
                 </form>
 
@@ -204,7 +204,7 @@
         "
                 class="w-full bg-blue-600 text-white py-2 rounded-xl
                hover:bg-blue-700 transition font-semibold">
-                Masuk
+                Masuk / Daftar
             </button>
         </div>
         @endguest
@@ -358,7 +358,7 @@
                     @csrf
 
                     <!-- NAMA -->
-                    <label class="text-sm text-gray-600">Nama Lengkap</label>
+                    <label class="text-sm text-gray-600">Nama Lengkap (tanpa gelar)</label>
                     <input
                         type="text"
                         name="nama_lengkap"
