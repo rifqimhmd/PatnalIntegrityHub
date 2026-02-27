@@ -9,20 +9,30 @@
     </div>
 </section>
 
+@php
+$bannerImages = $banners->pluck('image')->map(function($img){
+return asset('storage/banners/' . $img);
+});
+@endphp
+
+<div id="banner-data" data-images='@json($bannerImages)'></div>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
 
-        const images = [
-            "/images/banner/1.png",
-            "/images/banner/2.png",
-            "/images/banner/3.png",
-        ];
+        const images = JSON.parse(
+            document.getElementById("banner-data").dataset.images
+        );
+
+        if (!images.length) {
+            console.warn("Banner kosong dari database");
+            return;
+        }
 
         const slides = [
             images[images.length - 1],
             ...images,
             images[0],
-            images[1]
+            images[1] ?? images[0]
         ];
 
         const slider = document.getElementById("banner-slider");

@@ -3,6 +3,7 @@
 use App\Http\Controllers\PeraturanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Models\Banner;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,8 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::get("/", function () {
-    return view("index");
+    $banners = Banner::latest()->get();
+    return view("index", compact("banners"));
 });
 
 Route::get("/about", function () {
