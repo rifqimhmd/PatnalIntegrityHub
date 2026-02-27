@@ -3,8 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
+    <script src="//unpkg.com/alpinejs" defer></script>
     <title>Admin Panel</title>
     @vite(['resources/css/app.css'])
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
 </head>
 
 <body class="bg-gray-100 font-sans antialiased">
@@ -58,9 +62,24 @@
                     Dashboard
                 </a>
 
-                <a href="/banner"
+                <a href="/admin/banner"
                     class="block px-4 py-3 rounded-lg hover:bg-gray-100 transition">
                         Manajemen Banner
+                </a>
+
+                <a href="/admin/video"
+                    class="block px-4 py-3 rounded-lg hover:bg-gray-100 transition">
+                        Manajemen Video
+                </a>
+
+                <a href="/admin/sop"
+                    class="block px-4 py-3 rounded-lg hover:bg-gray-100 transition">
+                        Manajemen SOP
+                </a>
+
+                <a href="/admin/peraturan"
+                    class="block px-4 py-3 rounded-lg hover:bg-gray-100 transition">
+                        Manajemen Peraturan
                 </a>
 
                 <a href="/admin/users"

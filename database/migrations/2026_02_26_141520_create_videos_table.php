@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string("judul");
             $table->string("url");
+            $table->string("thumbnail")->nullable();
             $table->timestamps();
         });
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PeraturanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
@@ -22,13 +23,33 @@ Route::get("/about", function () {
     return view("about");
 });
 
-Route::post("/login", [AuthController::class, "login"])->name("login");
+// tampilkan halaman login
+Route::get("/login", [AuthController::class, "showLogin"])->name("login");
+
+// proses login
+Route::post("/login", [AuthController::class, "login"]);
 Route::post("/register", [AuthController::class, "register"])->name("register");
 Route::post("/logout", [AuthController::class, "logout"])->name("logout");
 
 Route::middleware(["auth", "role:admin"])->group(function () {
     Route::get("/admin", fn() => view("admin.index"));
-    Route::resource("/banner", \App\Http\Controllers\BannerController::class);
+    Route::resource(
+        "/admin/banner",
+        \App\Http\Controllers\BannerController::class,
+    )->only(["index", "store", "destroy"]);
+    Route::resource(
+        "/admin/video",
+        \App\Http\Controllers\VideoController::class,
+    )->only(["index", "store", "destroy"]);
+    Route::resource(
+        "/admin/sop",
+        \App\Http\Controllers\SopController::class,
+    )->only(["index", "store", "destroy"]);
+    Route::resource("/admin/peraturan", PeraturanController::class)->only([
+        "index",
+        "store",
+        "destroy",
+    ]);
 });
 
 Route::middleware(["auth", "role:pegawai"])->group(function () {

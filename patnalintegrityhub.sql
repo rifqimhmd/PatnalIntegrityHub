@@ -17,22 +17,26 @@
 -- Dumping structure for table patnalintegrityhub.banners
 CREATE TABLE IF NOT EXISTS `banners` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table patnalintegrityhub.banners: ~0 rows (approximately)
+INSERT INTO `banners` (`id`, `image`, `created_at`, `updated_at`) VALUES
+	(1, 'zFVWJcv4o9dtvCJBATlMAD60mtiQbiJnBhl3nUui.png', '2026-02-27 10:09:53', '2026-02-27 10:09:53'),
+	(2, 'VqrGwiweThoOp8LYlgsjNzPSguWwR5HO6GicRSgM.png', '2026-02-27 10:10:02', '2026-02-27 10:10:02'),
+	(3, 'FK2ORvmziwWHuc8e3rNodovEB57TZhnF6nPBZ7zm.png', '2026-02-27 10:10:09', '2026-02-27 10:10:09');
 
 -- Dumping structure for table patnalintegrityhub.failed_jobs
 CREATE TABLE IF NOT EXISTS `failed_jobs` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uuid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
@@ -43,10 +47,10 @@ CREATE TABLE IF NOT EXISTS `failed_jobs` (
 -- Dumping structure for table patnalintegrityhub.migrations
 CREATE TABLE IF NOT EXISTS `migrations` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table patnalintegrityhub.migrations: ~11 rows (approximately)
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -60,12 +64,13 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(8, '2026_02_25_120219_create_banners_table', 3),
 	(9, '2026_02_26_141245_create_s_o_p_s_table', 4),
 	(10, '2026_02_26_141520_create_videos_table', 4),
-	(11, '2026_02_26_141742_create_peraturans_table', 5);
+	(11, '2026_02_26_141742_create_peraturans_table', 5),
+	(12, '2026_02_27_093718_add_thumbnail_to_videos_table', 6);
 
 -- Dumping structure for table patnalintegrityhub.password_reset_tokens
 CREATE TABLE IF NOT EXISTS `password_reset_tokens` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -75,23 +80,23 @@ CREATE TABLE IF NOT EXISTS `password_reset_tokens` (
 -- Dumping structure for table patnalintegrityhub.peraturans
 CREATE TABLE IF NOT EXISTS `peraturans` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `judul` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `file` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `judul` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `file` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table patnalintegrityhub.peraturans: ~0 rows (approximately)
 
 -- Dumping structure for table patnalintegrityhub.personal_access_tokens
 CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `tokenable_id` bigint unsigned NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -106,28 +111,28 @@ CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
 -- Dumping structure for table patnalintegrityhub.s_o_p_s
 CREATE TABLE IF NOT EXISTS `s_o_p_s` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `judul` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `file` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `judul` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `file` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table patnalintegrityhub.s_o_p_s: ~0 rows (approximately)
 
 -- Dumping structure for table patnalintegrityhub.tbl_user
 CREATE TABLE IF NOT EXISTS `tbl_user` (
   `id_user` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `nip` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nama_lengkap` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `foto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `no_wa` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nip` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama_lengkap` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `foto` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `no_wa` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `institusi_id` bigint unsigned DEFAULT NULL,
-  `nama_role` enum('admin','pegawai','psikolog') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama_role` enum('admin','pegawai','psikolog') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '0',
-  `verifikasi` enum('aktif','tidak aktif') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'tidak aktif',
+  `verifikasi` enum('aktif','tidak aktif') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'tidak aktif',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id_user`),
@@ -137,17 +142,17 @@ CREATE TABLE IF NOT EXISTS `tbl_user` (
 -- Dumping data for table patnalintegrityhub.tbl_user: ~3 rows (approximately)
 INSERT INTO `tbl_user` (`id_user`, `nip`, `nama_lengkap`, `email`, `foto`, `no_wa`, `password`, `institusi_id`, `nama_role`, `is_active`, `verifikasi`, `created_at`, `updated_at`) VALUES
 	(1, '200009032025061005', 'Rifqi Muhammad', NULL, NULL, NULL, '$2y$12$hNdqzl/.smnOyTe/BU0.leLDhUOY4qPBiOmV7auVzd6X6.wUVuctS', NULL, 'pegawai', 0, 'tidak aktif', '2026-02-23 21:25:12', '2026-02-24 05:37:37'),
-	(2, '0000', 'Admin', NULL, NULL, NULL, '$2y$12$ePNhx3dd/Y8aHLEs95ecm.RpQNGUEYJnorf./MlwqbR27r2aZwSTy', NULL, 'admin', 0, 'aktif', '2026-02-24 04:39:58', '2026-02-26 14:08:10'),
+	(2, '0000', 'Admin', NULL, NULL, NULL, '$2y$12$ePNhx3dd/Y8aHLEs95ecm.RpQNGUEYJnorf./MlwqbR27r2aZwSTy', NULL, 'admin', 1, 'aktif', '2026-02-24 04:39:58', '2026-02-27 10:46:05'),
 	(3, '199001122025061001', 'Hashirama Senju', NULL, NULL, NULL, '$2y$12$Q40q84KdchC7KEtqUS9WvOLc5Uvo6.hypRWOk7t94xibwIsmy6gf2', NULL, 'psikolog', 0, 'tidak aktif', '2026-02-24 13:33:27', '2026-02-24 13:57:00');
 
 -- Dumping structure for table patnalintegrityhub.users
 CREATE TABLE IF NOT EXISTS `users` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -159,14 +164,23 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping structure for table patnalintegrityhub.videos
 CREATE TABLE IF NOT EXISTS `videos` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `judul` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `judul` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `thumbnail` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table patnalintegrityhub.videos: ~0 rows (approximately)
+INSERT INTO `videos` (`id`, `judul`, `url`, `thumbnail`, `created_at`, `updated_at`) VALUES
+	(1, 'Videografis Peraturan Pemerintah Nomor 94 Tahun 2021 tentang Disiplin Pegawai Negeri Sipil', 'https://www.youtube.com/embed/bFmGdzeEV0s', 'https://img.youtube.com/vi/bFmGdzeEV0s/hqdefault.jpg', '2026-02-27 09:39:01', '2026-02-27 09:39:01'),
+	(2, 'Pembahasan Lengkap Undang-undang ASN Terbaru ❗️UU No. 20 Tahun 2023 tentang ASN', 'https://www.youtube.com/embed/6YOkAL8BoUU', 'https://img.youtube.com/vi/6YOkAL8BoUU/hqdefault.jpg', '2026-02-27 09:40:26', '2026-02-27 09:40:26'),
+	(3, 'Kesehatan Mental di Tempat Kerja', 'https://www.youtube.com/embed/aVgihMIhi6c', 'https://img.youtube.com/vi/aVgihMIhi6c/hqdefault.jpg', '2026-02-27 09:43:13', '2026-02-27 09:43:13'),
+	(4, 'Korupsi awal dari kemunduran negeri', 'https://www.youtube.com/embed/nP94bjzVUVY', 'https://img.youtube.com/vi/nP94bjzVUVY/hqdefault.jpg', '2026-02-27 09:43:43', '2026-02-27 09:43:43'),
+	(5, 'INDONESIA MERDEKA TANPA KORUPSI DAN GRATIFIKASI', 'https://www.youtube.com/embed/OkgbKHkErjs', 'https://img.youtube.com/vi/OkgbKHkErjs/hqdefault.jpg', '2026-02-27 09:44:32', '2026-02-27 09:44:32'),
+	(6, 'AYO TOLAK GRATIFIKAS', 'https://www.youtube.com/embed/wygiJONYlQA', 'https://img.youtube.com/vi/wygiJONYlQA/hqdefault.jpg', '2026-02-27 10:06:24', '2026-02-27 10:06:24'),
+	(7, 'ILM | LAPOR GRATIFIKASI', 'https://www.youtube.com/embed/XyBxnqWxWns', 'https://img.youtube.com/vi/XyBxnqWxWns/hqdefault.jpg', '2026-02-27 10:07:33', '2026-02-27 10:07:33');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
