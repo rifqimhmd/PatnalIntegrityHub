@@ -4,6 +4,9 @@ use App\Http\Controllers\PeraturanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Models\Banner;
+use App\Models\Video;
+use App\Models\Peraturan;
+use App\Models\SOP;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +20,13 @@ use App\Models\Banner;
 */
 
 Route::get("/", function () {
-    $banners = Banner::latest()->get();
-    return view("index", compact("banners"));
+
+    $banners     = Banner::latest()->get();
+    $videos      = Video::latest()->get();
+    $peraturans  = Peraturan::orderBy('judul', 'asc')->get();
+    $sops        = SOP::orderBy('judul', 'asc')->get();
+
+    return view("index", compact("banners", "videos", "peraturans", "sops"));
 });
 
 Route::get("/about", function () {

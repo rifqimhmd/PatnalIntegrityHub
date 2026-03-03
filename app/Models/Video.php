@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Video extends Model
 {
     use HasFactory;
-    /**
-     * fillable
-     *
-     * @var array
-     */
-    protected $fillable = ["judul", "url", "thumbnail"];
+
+    protected $fillable = [
+        "judul",
+        "url",
+        "thumbnail"
+    ];
 }
