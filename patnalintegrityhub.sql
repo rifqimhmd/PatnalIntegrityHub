@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2026 at 08:09 AM
+-- Generation Time: Mar 04, 2026 at 08:13 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -39,9 +39,9 @@ CREATE TABLE `banners` (
 --
 
 INSERT INTO `banners` (`id`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'zFVWJcv4o9dtvCJBATlMAD60mtiQbiJnBhl3nUui.png', '2026-02-27 10:09:53', '2026-02-27 10:09:53'),
-(2, 'VqrGwiweThoOp8LYlgsjNzPSguWwR5HO6GicRSgM.png', '2026-02-27 10:10:02', '2026-02-27 10:10:02'),
-(3, 'FK2ORvmziwWHuc8e3rNodovEB57TZhnF6nPBZ7zm.png', '2026-02-27 10:10:09', '2026-02-27 10:10:09');
+(7, 'latjuBkeNXDkIEu55XWPx7ICj6c79zMnYmaKBs6o.png', '2026-02-27 08:25:35', '2026-02-27 08:25:35'),
+(8, 'MA6vj6FFRdYfmsuW3MArTD1dn1hiPqoD8HkdZQxl.png', '2026-02-27 08:25:41', '2026-02-27 08:25:41'),
+(9, 'I3ZVKCE5NJ5zSM2d2CTeyphYtnD9z10DAwRA6QGu.png', '2026-02-27 08:25:47', '2026-02-27 08:25:47');
 
 -- --------------------------------------------------------
 
@@ -115,6 +115,18 @@ CREATE TABLE `peraturans` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `peraturans`
+--
+
+INSERT INTO `peraturans` (`id`, `judul`, `file`, `created_at`, `updated_at`) VALUES
+(6, 'Kode Etik Pegawai Pemasyarakatan', '1772515648_Kode Etik Pegawai Pemasyarakatan.pdf', '2026-03-03 05:27:28', '2026-03-03 05:27:28'),
+(7, 'Netralitas ASN dalam Pilkada', '1772515716_Netralitas ASN dalam Pilkada.pdf', '2026-03-03 05:28:36', '2026-03-03 05:28:36'),
+(8, 'Permen Iminpas No. 1 Tahun 2024', '1772515730_Permen Iminpas No. 1 Tahun 2024.pdf', '2026-03-03 05:28:50', '2026-03-03 05:28:50'),
+(9, 'PP No. 94 Tahun 2021 tentang Disiplin PNS', '1772515777_PP No. 94 Tahun 2021 tentang Disiplin PNS.pdf', '2026-03-03 05:29:37', '2026-03-03 05:29:37'),
+(10, 'Sanksi Pelanggaran Disiplin Berat ASN dalam Perspektif Hukum', '1772515788_Sanksi Pelanggaran Disiplin Berat ASN dalam Perspektif Hukum.pdf', '2026-03-03 05:29:48', '2026-03-03 05:29:48'),
+(11, 'UU ASN No.20 Tahun 2023 Tentang ASN', '1772515800_UU ASN No.20 Tahun 2023 Tentang ASN.pdf', '2026-03-03 05:30:00', '2026-03-03 05:30:00');
+
 -- --------------------------------------------------------
 
 --
@@ -153,7 +165,7 @@ CREATE TABLE `s_o_p_s` (
 --
 
 INSERT INTO `s_o_p_s` (`id`, `judul`, `file`, `created_at`, `updated_at`) VALUES
-(4, 'test', '1772175960_Formulir Kesediaan Mengikuti Latsar.pdf', '2026-02-27 07:06:00', '2026-02-27 07:06:00');
+(6, 'SOP Pelaporan Gratifikasi', '1772516369_Kode Etik Pegawai Pemasyarakatan.pdf', '2026-03-03 05:39:29', '2026-03-03 05:39:29');
 
 -- --------------------------------------------------------
 
@@ -182,8 +194,8 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id_user`, `nip`, `nama_lengkap`, `email`, `foto`, `no_wa`, `password`, `institusi_id`, `nama_role`, `is_active`, `verifikasi`, `created_at`, `updated_at`) VALUES
-(1, '200009032025061005', 'Rifqi Muhammad', NULL, NULL, NULL, '$2y$12$hNdqzl/.smnOyTe/BU0.leLDhUOY4qPBiOmV7auVzd6X6.wUVuctS', NULL, 'pegawai', 0, 'tidak aktif', '2026-02-23 21:25:12', '2026-02-27 06:30:17'),
-(2, '0000', 'Admin Patnal', NULL, NULL, NULL, '$2y$12$ePNhx3dd/Y8aHLEs95ecm.RpQNGUEYJnorf./MlwqbR27r2aZwSTy', NULL, 'admin', 1, 'aktif', '2026-02-24 04:39:58', '2026-02-27 06:48:57'),
+(1, '200009032025061005', 'Rifqi Muhammad', NULL, NULL, NULL, '$2y$12$hNdqzl/.smnOyTe/BU0.leLDhUOY4qPBiOmV7auVzd6X6.wUVuctS', NULL, 'pegawai', 1, 'tidak aktif', '2026-02-23 21:25:12', '2026-03-03 05:49:41'),
+(2, '0000', 'Admin Patnal', NULL, NULL, NULL, '$2y$12$ePNhx3dd/Y8aHLEs95ecm.RpQNGUEYJnorf./MlwqbR27r2aZwSTy', NULL, 'admin', 0, 'aktif', '2026-02-24 04:39:58', '2026-03-04 06:44:42'),
 (4, '199712082003122002', 'Winanti, S.psi., M.si', NULL, NULL, NULL, '$2y$12$KYpoKesRUTUfv8EVzO80KeX3rxPWRlqsOkSFST8ZEVwW9L/IiGPUW', NULL, 'psikolog', 0, 'tidak aktif', '2026-02-27 06:48:41', '2026-02-27 06:48:48');
 
 -- --------------------------------------------------------
@@ -308,7 +320,7 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT for table `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -326,7 +338,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `peraturans`
 --
 ALTER TABLE `peraturans`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -338,7 +350,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `s_o_p_s`
 --
 ALTER TABLE `s_o_p_s`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`

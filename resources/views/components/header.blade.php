@@ -43,9 +43,6 @@
         <nav class="hidden md:flex space-x-8 font-medium items-center">
             <a href="/" class="hover:text-blue-600">Beranda</a>
 
-            <a href="https://konsultasi.klinikpatnal.com/"
-                class="hover:text-blue-600">Konsultasi</a>
-
             <a href="{{ url('/') }}#pustakadokumen"
                 class="hover:text-blue-600">
                 Pustaka Dokumen
@@ -131,12 +128,6 @@
             @click="showMobileMenu = false"
             class="block px-6 py-3 hover:bg-gray-100">
             Beranda
-        </a>
-
-        <a href="https://konsultasi.klinikpatnal.com/"
-            @click="showMobileMenu = false"
-            class="block px-6 py-3 hover:bg-gray-100">
-            Konsultasi
         </a>
 
         <a href="{{ url('/') }}#pustakadokumen"
